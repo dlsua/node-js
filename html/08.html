@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td{
+        border : 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <table>
+        ,<thead>
+            <tr>
+                <th>학년</th>
+                <th>반</th>
+                <th>학생수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">3</td>
+                <td>3반</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <!-- <td>1</td> 위에 rowspan이 병합함-->
+                <td>4반</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <!-- <td>1</td> -->
+                <td>1반</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td colspan="2">합계</td>
+                <!-- <td></td> -->
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
