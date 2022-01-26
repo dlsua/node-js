@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 64비트 부동소수점
+      // 64개의 0101010 공간
+      let x = 0.1; // 0 1 0 10101010100001010
+      let y = 0.2;
+      let z = x + y;
+      console.log(z); // 0.30000000000000004
+
+      //   소수점이 없는 경우 : 정수인경우
+      let x1 = 999999999999999; //10000000000000000
+      console.log(x1);
+      console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+      console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script src="js/common.js"></script>
+    <script src="js/calculator.js"></script> -->
+    <script>
+      let n1 = 3;
+      let n2 = 5;
+      let sum = n1 + n2;
+
+      let n3 = 3;
+      let n4 = 5;
+      let sum2 = n3 + n4;
+
+      let sum3 = plus(12, 34);
+      console.log(sum3);
+      console.log(plus(5, 7));
+
+      // 함수 선언식
+      function plus(n1, n2) {
+        // let sum = n1 + n2;
+        return n1 + n2;
+      }
+
+      // 함수 표현식
+      let add = function (n1, n2) {
+        return n1 + n2;
+      };
+
+      console.log(add(5, 7));
+
+      // Function 생성자 함수
+      let add2 = new Function("n1", "n2", "return n1 + n2;");
+      const operator = "+";
+      let calculator = new Function(
+        "n1",
+        "n2",
+        "return n1 " + operator + " n2;"
+      );
+
+      // 함수를 사용하는 이유
+      //   코드의 재활용
+      // 유지보수, 운영 편해져요
+
+      const tax = 0.15;
+
+      function taxAmount(amount) {
+        // 부가세는 현재 10%
+
+        return amount * tax;
+      }
+
+      console.log(taxAmount(1000));
+    </script>
+  </body>
+</html>

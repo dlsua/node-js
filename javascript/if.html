@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 조건문(if)
+      // if 만일 조건을 만족하면
+      // else-if 그럼 두번째 조건을 만족하면
+      // else-if 그럼 세번째 조건을 만족하면
+      // else 어떤것도 만족하지 못했으면
+      // 7세이하 0
+      // 8세이상 13세 이하 450
+      // 14세이상 18세 이하 700
+      // 19세 이상 1000
+      // 70세 이상 0원
+      let busFare = 0;
+      let age = 13;
+
+      //   if (age <= 7) {
+      //     busFare = 0;
+      //   } else if (age >= 8 && age <= 13) {
+      //     busFare = 450;
+      //   } else if (age >= 14 && age <= 18) {
+      //     busFare = 700;
+      //   } else if (age >= 19 && age < 70) {
+      //     busFare = 1000;
+      //   } else {
+      //     busFare = 0;
+      //   }
+
+      if (age <= 7) {
+        busFare = 0;
+      } else if (age <= 13) {
+        busFare = 450;
+      } else if (age <= 18) {
+        busFare = 700;
+      } else if (age < 70) {
+        busFare = 1000;
+      } else {
+        busFare = 0;
+      }
+
+      console.log(busFare);
+      let isAdult = false;
+
+      if (!isAdult) {
+        console.log(isAdult);
+      }
+
+      let x;
+
+      if (undefined) {
+      }
+
+      if (null) {
+      }
+
+      x = 0;
+      if (x) {
+      }
+
+      //   NaN = Not a Number
+
+      if (NaN) {
+      }
+
+      let txt = "";
+      let nums = [1, 2, 3];
+      if (txt) {
+        console.log(txt);
+      }
+    </script>
+  </body>
+</html>

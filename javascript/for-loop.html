@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 반복문
+      // 특정 코드 블록을 특정 횟수 만큼 반복해서 실행되게 만드는것이 반복문.
+
+      let brands = ["애플", "구글", "메타", "아마존", "네이버", "카카오"];
+      //   console.log(brands[0]);
+      //   console.log(brands[1]);
+      //   console.log(brands[2]);
+      //   console.log(brands[3]);
+      //   console.log(brands[4]);
+      //   console.log(brands[5]);
+
+      //   const length = brands.length;
+
+      // 반복문 - for-loop
+      //   for (statement1; statement2; statement3) {
+      //       // 코드 블록
+      //   }
+
+      //  statement1 - 코드 블록을 실행하기전에 무조건 딱 한번 실행
+      // statement2 - 코드 블록을 실행시킬 조건절
+      // statement3 - 코드 블록을 실행한 후 실행됨
+      // let i = 0;
+
+      const length = brands.length;
+      for (let i = 0; i < length; i++) {
+        // console.log(brands[i]); // i = 0, 애플 -> i = 1
+      }
+
+      const productList = [
+        // 음료 리스트
+        {
+          name: "솔의눈",
+          price: 700,
+        },
+        {
+          name: "커피",
+          price: 700,
+        },
+        {
+          name: "파워레이드",
+          price: 1200,
+        },
+        {
+          name: "오렌지",
+          price: 1000,
+        },
+        {
+          name: "보리차",
+          price: 1200,
+        },
+        {
+          name: "밀키스",
+          price: 800,
+        },
+      ];
+
+      const inputCoin = 700;
+      let len = productList.length;
+      let sum = 0;
+      for (let i = 0; i < len; i++) {
+        if (productList[i].price <= inputCoin) {
+          console.log(productList[i].name);
+        }
+
+        sum += productList[i].price;
+      }
+
+      console.log("sum:", sum);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // switch
+      // Date()
+      const d = new Date();
+      const day = d.getDay(); // 요일정보를 숫자로 알려줘요
+      console.log(day); // 2
+      // 0 - 일요일, 1 -월요일, 2 - 화요일
+      let dayName = "";
+      //   if (day === 0) {
+      //     dayName = "일요일";
+      //   } else if (day === 1) {
+      //     dayName = "월요일";
+      //   } else if (day === 2) {
+      //     dayName = "화요일";
+      //   } else if (day === 3) {
+      //     dayName = "수요일";
+      //   } else if (day === 4) {
+      //     dayName = "목요일";
+      //   } else if (day === 5) {
+      //     dayName = "금요일";
+      //   } else if (day === 6) {
+      //     dayName = "토요일";
+      //   }
+
+      //   switch (day) {
+      //     case 0:
+      //       dayName = "일요일";
+      //       break;
+      //     case 1:
+      //       dayName = "월요일";
+      //       break;
+      //     case 2:
+      //       dayName = "화요일";
+      //       break;
+      //     case 3:
+      //       dayName = "수요일";
+      //       break;
+      //     case 4:
+      //       dayName = "목요일";
+      //       break;
+      //     case 5:
+      //       dayName = "금요일";
+      //       break;
+      //     case 6:
+      //       dayName = "토요일";
+      //       break;
+
+      //     default:
+      //       dayName = "none";
+      //       break;
+      //   }
+
+      const dayNamesKO = [
+        "일요일",
+        "월요일",
+        "화요일",
+        "수요일",
+        "목요일",
+        "금요일",
+        "토요일",
+      ];
+
+      const dayNamesEN = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      const dayNames = {
+        ko: [
+          "일요일",
+          "월요일",
+          "화요일",
+          "수요일",
+          "목요일",
+          "금요일",
+          "토요일",
+        ],
+        en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      };
+
+      const userLanguage = "ko"; // en
+
+      console.log(dayNames[userLanguage][day]);
+
+      //   if (userLanguage === "ko") {
+      //     console.log(dayNamesKO[day]);
+      //   } else if (userLanguage === "en") {
+      //     console.log(dayNamesEN[day]);
+      //   }
+
+      //   console.log(dayName);
+    </script>
+  </body>
+</html>

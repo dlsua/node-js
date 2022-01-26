@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let brands = ["애플", "구글", "메타", "아마존", "네이버", "카카오"];
+
+      // for (let i = 0; i < length; i++) {
+      // for-in
+      for (const index in brands) {
+        console.log(index);
+      }
+
+      // for-in object
+      let person = {
+        name: "홍길동",
+        age: 22,
+        tel: "010-0000-0000",
+        isAdult: true,
+        siGunGu: "",
+        grade: [],
+      };
+
+      let userSelect = "name";
+
+      if (userSelect === "name") {
+        console.log(person.name);
+      }
+
+      console.log(person[userSelect]);
+
+      //   let person = getPerson(); // 특정 함수를 호출하고 그 함수 서버로부터 사용자 정보를 가져온다.
+      for (const key in person) {
+        console.log(key, person[key]);
+      }
+    </script>
+  </body>
+</html>
