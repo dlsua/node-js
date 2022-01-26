@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        table{
+            border:1px solid slateblue;
+            
+        }
+        tbody tr:hover{
+            background-color: bisque;
+        }
+        .aaa tbody tr:nth-child(2n){
+            background-color: blueviolet    ;
+        }
+        th, td {
+            border:1px solid black;
+            padding: 5px;
+        }
+    </style>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>연락처</th>
+                    <th>이메일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>이상용</th>
+                    <th>01012341234</th>
+                    <th>ㅂㅈㄷ</th>
+                </tr>
+                <tr>
+                    <th>ㅂㅈㄷ</th>
+                    <th>12313241234</th>
+                    <th>ㅇㄴㅍㄴㅇㅇ</th>
+                </tr>
+                <tr>
+                    <th>ㅁㅇㄴㅁ</th>
+                    <th>01012386547</th>
+                    <th>ㄴㄷㄷㄹㅈㅈㅅ</th>
+                </tr>
+            </tbody>
+        </table>
+        <table class="aaa">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>연락처</th>
+                    <th>이메일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>이상용</th>
+                    <th>01012341234</th>
+                    <th>ㅂㅈㄷ</th>
+                </tr>
+                <tr>
+                    <th>ㅂㅈㄷ</th>
+                    <th>12313241234</th>
+                    <th>ㅇㄴㅍㄴㅇㅇ</th>
+                </tr>
+                <tr>
+                    <th>ㅁㅇㄴㅁ</th>
+                    <th>01012386547</th>
+                    <th>ㄴㄷㄷㄹㅈㅈㅅ</th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <!-- 시멘틱 테그 hearder, nav, main, aside, footer -->
-        <!-- div divsion -->
-        <div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
 
+      #header {
+        border: 2px solid red;
+        line-height: 55px;
+        height: 55px;
+      }
 
-        </div>
-    </body>
+      .nav {
+        border: 2px solid blue;
+        height: 60px;
+      }
+
+      .nav > ul {
+        list-style: none;
+        padding-left: 0px;
+      }
+
+      .nav > ul > li {
+        width: 20%;
+        height: 25px;
+        float: left;
+        text-align: center;
+      }
+
+      #main {
+        border: 2px solid green;
+      }
+
+      .section {
+        border: 1px solid red;
+        height: 100px;
+      }
+
+      #footer {
+        border: 2px solid black;
+        height: 55px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header, nav, main, section, article, aside, footer,  -->
+    <!-- div - division -->
+    <div id="header">Header 영역</div>
+    <div class="nav">
+      <ul>
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+      </ul>
+    </div>
+    <div id="main">
+      <div class="section">Section 영역</div>
+      <div class="section">Section 영역</div>
+      <div class="section">Section 영역</div>
+    </div>
+    <div id="footer">Footer 영역</div>
+  </body>
 </html>
