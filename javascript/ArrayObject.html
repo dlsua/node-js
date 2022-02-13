@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="city"></select>
+    <button onclick="doSearch()">조회</button>
+    <button>라인추가</button>
+    <button>라인삭제</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>음료</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody id="table1Tbody"></tbody>
+    </table>
+    <script>
+      // Array 객체
+      let brands = ["애플", "구글", "메타", "아마존", "네이버", "카카오"];
+      console.log(brands.toString());
+
+      //join()
+      console.log(brands.join(" * "));
+
+      function doSearch() {
+        const productList = [
+          // 음료 리스트
+          {
+            name: "솔의눈",
+            price: 700,
+          },
+          {
+            name: "커피",
+            price: 700,
+          },
+          {
+            name: "파워레이드",
+            price: 1200,
+          },
+          {
+            name: "오렌지",
+            price: 1000,
+          },
+          {
+            name: "보리차",
+            price: 1200,
+          },
+          {
+            name: "밀키스",
+            price: 800,
+          },
+        ];
+
+        //   let h = "";
+        let h = [];
+        // h[0] = 1;
+        // h[1] = 2;
+        // h.push(1);
+        // h.push(2);
+
+        for (const product of productList) {
+          // h += "<tr>";
+          // h += "<td>" + product.name + "</td>";
+          // h += "<td>" + product.price + "</td>";
+          // h += "</tr>";
+
+          h.push("<tr>");
+          h.push("<td>" + product.name + "</td>");
+          h.push("<td>" + product.price + "</td>");
+          h.push("</tr>");
+        }
+
+        //   console.log(h);
+
+        document.getElementById("table1Tbody").innerHTML = h.join("");
+      }
+
+      // pop()
+      console.log(brands.pop());
+      console.log(brands.pop());
+
+      //shift()
+      console.log(brands.shift());
+      console.log(brands.shift());
+
+      let eventQueue = [];
+
+      //   eventQueue.shift()
+
+      // unshift()
+      brands.unshift("삼성전자");
+      console.log(brands);
+
+      function loadCity(needAll) {
+        let cities = [
+          { code: "02", title: "서울" },
+          { code: "21", title: "부산" },
+          { code: "064", title: "제주" },
+        ];
+
+        let h = [];
+
+        for (const city of cities) {
+          h.push(
+            '<option value="' + city.code + '">' + city.title + "</option>"
+          );
+        }
+
+        if (needAll) {
+          h.unshift('<option value="">==전체==</option>');
+        }
+
+        document.getElementById("city").innerHTML = h.join("");
+      }
+
+      loadCity();
+
+      // splice()
+      brands.splice(1, 0, "리턴밸류", "더그레잇");
+      console.log(brands);
+
+      const productList = [
+        // 음료 리스트
+        {
+          name: "솔의눈",
+          price: 700,
+        },
+        {
+          name: "커피",
+          price: 700,
+        },
+        {
+          name: "파워레이드",
+          price: 1200,
+        },
+        {
+          name: "오렌지",
+          price: 1000,
+        },
+        {
+          name: "가봉",
+          price: 1000,
+        },
+        {
+          name: "보리차",
+          price: 1200,
+        },
+        {
+          name: "밀키스",
+          price: 800,
+        },
+      ];
+
+      const len = productList.length;
+      let newProductList = [];
+      for (let i = 0; i < len; i++) {
+        if (i === 3) {
+          newProductList.push({ name: "", price: 0 });
+        } else {
+          newProductList.push(productList[i]);
+        }
+      }
+
+      console.log(newProductList);
+
+      // concat()
+      let arr1 = ["A", "B"];
+      let arr2 = ["C", "D"];
+      let arr3 = ["E", "F", "G"];
+      let arr4 = arr1.concat(arr2, arr3);
+      console.log(arr4);
+
+      //   let arr5 = [...arr1, ...arr2, ...arr3];
+      //   console.log(arr5);
+
+      // slice
+      console.log(arr4.slice(1, 2));
+
+      // sort()
+      brands = ["애플", "구글", "메타", "아마존", "네이버", "카카오"];
+      console.log(brands.sort());
+
+      let points = [40, 100, 1, 5, 25, 10];
+      console.log(points.sort());
+
+      function numberSortAsc(a, b) {
+        // a - 40, b - 100
+        // a - 100, b - 1
+        // [40, 1, 100, 5, 25, 10]
+        // a - 100, b -5
+        // [40, 1, 5 , 100, 25, 10]
+        // [40, 1, 5, 25 , 100, 10]
+        // [40, 1, 5, 25 , 10, 100]
+
+        // [1, 5, 10, 25, 40, 100]
+
+        return a - b;
+
+        // if(a > b) return 1;
+        // else if(a < b) return -1;
+        // else return 0;
+      }
+
+      function numberSortDes(a, b) {
+        return b - a;
+      }
+
+      function objectSort(a, b) {
+        if (a.name > b.name) return 1;
+        else if (a.name < b.name) return -1;
+        else return 0;
+      }
+
+      function priceSort(a, b) {
+        // if (a.name > b.name) return 1;
+        // else if (a.name < b.name) return -1;
+        // else return 0;
+
+        return a.price - b.price;
+      }
+
+      function twoFieldSort(a, b) {
+        if (a.price > b.price) return 1;
+        else if (a.price < b.price) return -1;
+        else {
+          if (a.name > b.name) return 1;
+          else if (a.name < b.name) return -1;
+          else return 0;
+        }
+      }
+
+      console.log(points.sort(numberSortAsc));
+      console.log(points.sort(numberSortDes));
+      console.log(productList.sort(objectSort));
+      console.log(productList.sort(priceSort));
+      console.log(productList.sort(twoFieldSort));
+
+      // filter()
+      newProductList = [];
+      const inputCoin = 1000;
+      for (const product of productList) {
+        if (product.price <= inputCoin) {
+          newProductList.push(product);
+        }
+      }
+
+      console.log(newProductList);
+
+      function doFilter(product) {
+        // if (product.price <= inputCoin) {
+        //   return true;
+        // } else {
+        //   return false;
+        // }
+
+        return product.price <= inputCoin ? true : false;
+      }
+
+      //   newProductList = productList.filter(doFilter);
+      newProductList = productList.filter(function (product) {
+        return product.price <= inputCoin ? true : false;
+      });
+      console.log(newProductList);
+
+      //   console.log(productList.filter((p) => p.price <= inputCoin));
+
+      // map()
+
+      let userList = [
+        {
+          firstName: "재석",
+          lastName: "유",
+          email: "yu@gmail.com",
+        },
+        {
+          firstName: "종국",
+          lastName: "김",
+          email: "kim@gmail.com",
+        },
+        {
+          firstName: "흥국",
+          lastName: "김",
+          email: "kim@gmail.com",
+        },
+        {
+          firstName: "세찬",
+          lastName: "양",
+          email: "yang@gmail.com",
+        },
+        {
+          firstName: "석진",
+          lastName: "지",
+          email: "ji@gmail.com",
+        },
+      ];
+
+      function newUserMap(user) {
+        return {
+          //   firstName: user.firstName,
+          //   lastName: user.lastName,
+          email: user.email,
+          fullName: user.lastName + user.firstName,
+        };
+      }
+
+      let userList2 = userList.map(newUserMap);
+      console.log(userList2);
+
+      //userList[0].firstName + " " + userList[0].lastName
+
+      // reduce()
+
+      points = [80, 90, 95, 78, 88, 100, 92];
+      let sum = points.reduce(function (
+        accumulator,
+        currentValue,
+        currentIndex,
+        arr
+      ) {
+        // 첫번째 accumulator - 누적 값
+        // 두번째 currentValue - 현재 배열 요소
+        // 세번째 currentIndex - 현재 배열 인덱스 번호
+        // 네번째 arr - 전체 배열
+        return accumulator + currentValue;
+      },
+      0);
+
+      console.log(sum);
+
+      let alphabets = ["A", "B", "C"];
+
+      let sum2 = productList.reduce(function (total, product) {
+        if (product.price > 1000) {
+          return total + product.price;
+        } else {
+          return total;
+        }
+        // return total + product.price;
+      }, 0);
+
+      let alphabetString = alphabets.reduce(function (alpha, c) {
+        return alpha + c;
+      }, "");
+
+      console.log(alphabetString);
+
+      console.log("음료 전체 합계", sum2);
+
+      let kims = userList.reduce(function (users, user) {
+        if (user.lastName === "김") {
+          users.push(user);
+          //   return users.push(user);
+        }
+
+        return users;
+      }, []);
+
+      console.log(kims);
+    </script>
+  </body>
+</html>

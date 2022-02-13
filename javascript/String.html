@@ -109,6 +109,60 @@
 
       let name = "고 승 원";
       console.log(name.replace(/\s/g, ""));
+
+      // padStart(), padEnd()
+      str = "155"; // 4자리
+      //정해진 툴로 만들어 질 때 사용
+      //자동차나 제품 등 이용 가능할 듯
+      // 대학학번 - 년도 2자리 + 학과번호 2자리 + 입학순서(이름 가나다순) 4자리 = 8자리
+      // 22031256
+
+      // console.log(str.padStart(4, "0")); //star : str의 끝나는 자리수부터 end의 수만큼  end : 하나의 글자
+      // while (str.length < 4) {
+      //   str = "0" + str;
+      // }
+
+      // console.log(str);
+
+      console.log(str.padEnd(4, "0"));
+
+      // charAt()
+      str = "A0001"; //Admin 관리자
+      // M
+      // 12
+
+      console.log(str.charAt(0));
+      // str.substring(0,1);
+      // str.substr(0,1);
+      // str.slice(0,1);
+
+      // charCodeAt()
+      console.log(str.charCodeAt(0));
+
+      // split()
+      // split()
+  //배열로 처리됨. ===1 
+  //단점이 기준을 앞뒤로 잡아 0번째에 빈 공간이 생김.
+  let tags = "#개발자의품격#웹개발#부트캠프#자바스크립트";
+      let email = "a@gmail.com,b@gmail.com,c@gmail.com";
+      let emails = email.split(",");
+      console.log(emails);
+      console.log(tags.split("#"));
+      date = "2022-01-26";
+      dates = date.split("-");
+      //단락별 기준을 잡고 원하고자하는 부분을 찾을 수 있음.
+      year = dates[0];
+      month = dates[1];
+      day = dates[2];
+      console.log(dates);
+
+      //startsWith(), endsWith()
+      //startsWith(부분이 맞는지), endsWith(부분이 맞는지) 확인하는 메소드.
+      let url = "http://website.com";
+      console.log(url.startsWith("http://"));
+
+      let file = "abc.pdf";
+      console.log(file.endsWith(".pdf"));
     </script>
   </body>
 </html>

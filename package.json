@@ -1,0 +1,19 @@
+{
+  "name": "node-js",
+  "version": "8.1.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlsua/node-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlsua/node-js/issues"
+  },
+  "homepage": "https://github.com/dlsua/node-js#readme"
+}

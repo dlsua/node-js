@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let person = {
+                fistName = "Sangyong",
+                lastName = "Lee"
+            };
+
+            let type = "student";
+            let score = {
+                [type] : "john", //student : john; (동적 바인딩) 실무에선 잘 안 씀, 애초에 다 설정하는 듯.
+                score : 95,
+            };
+
+            person.email = ""; //person에 있는 key를 동적으로 바인딩 (이미 설정된 key에 임의적으로 추가하는 행위를 동적 행위)
+            person["addr"] =""; 
+
+        </script>
+    </body>
+</html>

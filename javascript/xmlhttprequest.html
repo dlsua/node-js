@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web:ajax</title>
+  </head>
+  <body>
+    <button onclick="getData();">조회</button>
+    <button onclick="postData();">생성</button>
+    <button onclick="putData();">수정</button>
+    <button onclick="deleteData();">삭제</button>
+    <script>
+      //Asynchronous JavaScript and XML
+      //비동기 통신 - 서버로 데이터를 날리는 동안 자바스크립트는 다른일을 하고 데이터를 서버로 다시 받으면 그 때 작동함.
+      // 동시 통신 -
+      //XMLRequest - Ajax
+      //jquery
+      //fetch
+      //axios 
+
+
+      //method get post put(리소스 수정) patch(리소스 일부 수정) delete(리로스 삭제)
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET","http://localhost:3000/posts");
+      xhr.setRequestHeader("constent-type","application/json");
+      xhr.send();
+
+      xhr.onload = () => {
+        console.log(xhr);
+        if(xhr.status === 200) {
+          const res = JSON.parse(xhr.response);
+            console.log(res);
+        }
+      }
+
+    </script>
+  </body>
+</html>

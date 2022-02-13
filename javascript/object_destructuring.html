@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getPerson()  {
+        return {
+          firstName : "sangyong",
+          lastName : "lee",
+          age : 35,
+          email : "dlsua@hanmail.net",
+          city : "",
+          country : "",
+          company : ""
+        }
+      }
+
+      let person = getPerson(); //데이터를 전부 가져옴
+      let {firstName, lastName} = getPerson();
+      console.log(firstName);
+      console.log(lastName);
+
+      //let fistName = getPerson()["fistName"];  위에서 쓴 방식과 같음
+      //let lastName = getPerson()["lastName"];
+    </script>
+  </body>
+</html>
