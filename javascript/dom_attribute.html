@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="fefefef"
+      id="userId"
+      value=""
+      onkeyup="checkRequried();"
+    />
+    <br />
+    <select name="" id="city" onchange="selectCity();">
+      <option value="02">서울</option>
+      <option value="051">부산</option>
+      <option value="064">제주도</option>
+    </select>
+    <select name="" id="si" disabled>
+      <option value="02">제주시</option>
+      <option value="051">서귀포시</option>
+    </select>
+    <button onclick="getInfo();">가져오기</button>
+    <button onclick="setInfo();">설정하기</button>
+    <button onclick="doSave();" id="btnSave" disabled>저장하기</button>
+    <script>
+      // DOM 접급하고 나면, 그 다음 할일은?
+      // 결국은 속성 정보를 제어 하는거 - 정보를 가져오거나, 정보로 설정하는거
+
+      function selectCity() {}
+
+      function checkRequried() {
+        if (document.querySelector("#userId").value.length > 0) {
+          document.querySelector("#btnSave").disabled = false;
+        } else {
+          document.querySelector("#btnSave").disabled = true;
+        }
+      }
+
+      function getInfo() {
+        let userId = document.querySelector("#userId").value;
+        // let userId = document.querySelector("#userId").getAttribute("value");
+        console.log(userId);
+
+        console.log(document.querySelector("#city").value);
+      }
+
+      function setInfo() {
+        document.querySelector("#userId").value = "Jeremy";
+        // document.querySelector("#userId").setAttribute("value", "Jeremy");
+      }
+    </script>
+  </body>
+</html>
