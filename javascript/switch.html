@@ -10,54 +10,54 @@
     <script>
       // switch
       // Date()
-      const d = new Date();
-      const day = d.getDay(); // 요일정보를 숫자로 알려줘요
-      console.log(day); // 2
+      const d = new Date(); //deta 객체
+      const day = d.getDay(); // 요일정보를 숫자로 알려줘요 // getDay : Data에 대한 내장 객체
+      console.log(day); // 2    숫자로 getDay의 내장함수로 숫자로 요일정보를 알려줍니다.
       // 0 - 일요일, 1 -월요일, 2 - 화요일
       let dayName = "";
-      //   if (day === 0) {
-      //     dayName = "일요일";
-      //   } else if (day === 1) {
-      //     dayName = "월요일";
-      //   } else if (day === 2) {
-      //     dayName = "화요일";
-      //   } else if (day === 3) {
-      //     dayName = "수요일";
-      //   } else if (day === 4) {
-      //     dayName = "목요일";
-      //   } else if (day === 5) {
-      //     dayName = "금요일";
-      //   } else if (day === 6) {
-      //     dayName = "토요일";
-      //   }
+        // if (day === 0) {
+        //   dayName = "일요일";
+        // } else if (day === 1) {
+        //   dayName = "월요일";
+        // } else if (day === 2) {
+        //   dayName = "화요일";
+        // } else if (day === 3) {
+        //   dayName = "수요일";
+        // } else if (day === 4) {
+        //   dayName = "목요일";
+        // } else if (day === 5) {
+        //   dayName = "금요일";
+        // } else if (day === 6) {
+        //   dayName = "토요일";
+        // }
 
-      //   switch (day) {
-      //     case 0:
-      //       dayName = "일요일";
-      //       break;
-      //     case 1:
-      //       dayName = "월요일";
-      //       break;
-      //     case 2:
-      //       dayName = "화요일";
-      //       break;
-      //     case 3:
-      //       dayName = "수요일";
-      //       break;
-      //     case 4:
-      //       dayName = "목요일";
-      //       break;
-      //     case 5:
-      //       dayName = "금요일";
-      //       break;
-      //     case 6:
-      //       dayName = "토요일";
-      //       break;
+        switch (day) {
+          case 0:
+            dayName = "일요일";
+            break;
+          case 1:
+            dayName = "월요일";
+            break;
+          case 2:
+            dayName = "화요일";
+            break;
+          case 3:
+            dayName = "수요일";
+            break;
+          case 4:
+            dayName = "목요일";
+            break;
+          case 5:
+            dayName = "금요일";
+            break;
+          case 6:
+            dayName = "토요일";
+            break;
 
-      //     default:
-      //       dayName = "none";
-      //       break;
-      //   }
+          default:
+            dayName = "none";
+            break;
+        }
 
       const dayNamesKO = [
         "일요일",
@@ -81,20 +81,25 @@
           "금요일",
           "토요일",
         ],
-        en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        en: [
+          "Sun",
+          "Mon", 
+          "Tue", 
+          "Wed", 
+          "Thu", 
+          "Fri", 
+          "Sat"
+        ]
       };
+      const userLanguage = "en"; // en      const userLanguage = "en"; 키값을 불러옴.
+      console.log(dayNames[userLanguage][day]);  //매우 중요! dayNames[]문자열로 값을 불러옴 day는 getday값.
 
-      const userLanguage = "ko"; // en
-
-      console.log(dayNames[userLanguage][day]);
-
-      //   if (userLanguage === "ko") {
-      //     console.log(dayNamesKO[day]);
-      //   } else if (userLanguage === "en") {
-      //     console.log(dayNamesEN[day]);
-      //   }
-
-      //   console.log(dayName);
+        // if (userLanguage === "ko") {
+        //   console.log(dayNamesKO[day]);
+        // } else if (userLanguage === "en") {
+        //   console.log(dayNamesEN[day]);
+        // }
+        //  console.log(dayName);
     </script>
   </body>
 </html>
