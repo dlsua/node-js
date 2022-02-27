@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap; 
+      /* flex-wrap는 다음줄로 떨어트리는 효과. */
+    }
+
+    .col-4 {
+      flex: 33.3333%;
+      padding: 5px;
+    }
+
+    .col-8 {
+      flex: 66.6666%;
+      padding: 5px;
+    }
+
+    input.form-control {
+      width: 100%;
+      padding: 5px 10px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .alert {
+      color: red;
+    }
+
+    @media screen and (max-width: 700px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <body>
+    <div class="row">
+      <div class="col-4">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-8">
+        <input type="text" name="" id="name" class="form-control" />
+      </div>
+      <div class="col-4">
+        <label for="name">Gender</label>
+      </div>
+      <div class="col-8">
+        <input type="radio" name="gender" id="male" value="male" checked />
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">여자</label>
+      </div>
+      <div class="col-4">
+        <label for="company">Company</label>
+      </div>
+      <div class="col-8">
+        <input
+          type="text"
+          name=""
+          id="company"
+          class="form-control"
+          onkeyup="checkEnter(event, 'email');"
+        />
+      </div>
+      <div class="col-4">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-8">
+        <input
+          type="email"
+          name=""
+          id="email"
+          class="form-control"
+          onblur="checkEmail();"
+          onkeyup="checkEnter(event, 'phone');"
+        />
+        <div id="emailMsg" class="alert" style="display: none">
+          올바른 형식의 이메일을 입력하세요.
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="phone">Phone</label>
+      </div>
+      <div class="col-8">
+        <input
+          type="tel"
+          name=""
+          id="phone"
+          class="form-control"
+          placeholder="010-0000-0000"
+          onblur="checkPhone();"
+          onkeyup="checkEnterForPhone(event);"
+        />
+        <div id="phoneMsg" class="alert" style="display: none">
+          올바른 형식의 연락처를 입력하세요.
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="address">Address</label>
+      </div>
+      <div class="col-8">
+        <button onclick="openDaumAPI();">주소찾기</button>
+        <input type="text" name="" id="zonecode" style="width: 80px" readonly />
+        <input type="text" name="" id="address" class="form-control" readonly />
+      </div>
+    </div>
+    <div class="text-center">
+      <button onclick="doCreate();">저장</button>
+      <button onclick="goToList();">목록</button>
+      <button onclick="doReset();">초기화</button>
+    </div>
+
+    <script>
+
+    </script>
+  </body>
+</html>

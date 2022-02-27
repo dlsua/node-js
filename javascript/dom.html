@@ -68,19 +68,19 @@
     </table>
     <script>
       async function doSearch() {
-        const gender = document.querySelector("#gender").value;
+        const gender = document.querySelector("#gender").value; //option에 value값을 가져오기 위해 querySelector.value를 씀
         const name = document.querySelector("#name").value;
 
-        let resource = "http://localhost:3000/customers";
-        if (gender === "") {
-          if (name !== "") {
+        let resource = "http://localhost:3000/customers";  //아무 것도 안하고 전체 조회
+        if (gender === "") { //아무 것도 안하고 전체 조회 === 
+          if (name !== "") { //gender를 선택하고 name을 선택 안한 경우 !== 
             resource = `http://localhost:3000/customers?name_like=${name}`;
           }
         } else {
           if (name === "") {
-            resource = `http://localhost:3000/customers?gender=${gender}`;
+            resource = `http://localhost:3000/customers?gender=${gender}`; // name을 선택하고 gender를 선택 안한 경우
           } else {
-            resource = `http://localhost:3000/customers?gender=${gender}&name_like=${name}`;
+            resource = `http://localhost:3000/customers?gender=${gender}&name_like=${name}`; // 모두 선택한 경우
           }
         }
 
@@ -152,7 +152,7 @@
 
       function goToCreate() {
         document.location.href = "dom_create.html";
-      }
+      } //페이지 이동
 
       function checkEnter(e) {
         // console.log(e);
