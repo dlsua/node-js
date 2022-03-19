@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/dlsua/node-js/issues"
   },
-  "homepage": "https://github.com/dlsua/node-js#readme"
+  "homepage": "https://github.com/dlsua/node-js#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "exceljs": "^4.3.0",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-vue": "^8.5.0"
+  }
 }

@@ -9,24 +9,51 @@
   <body>
     <script>
       let brands = ["애플", "구글", "메타", "아마존", "네이버", "카카오"];
-      // for-of
+    
       // 실무에선 for-of
-      for (const brand of brands) {
-        console.log(brand);
-      }
+      for(const numin in brands){
+        console.log(numin); 
+      } //0,1,2,3,4,5
+      for (const meta of brands) {
+        console.log(meta);
+      } // 애플구글메타아마존....
 
-      const lang = "JavaScript";
-      for (const char of lang) {
-        console.log(char);
+      let persons = {
+        name : "lee",
+        age : 35
+      };
+      for(const q in persons){ //q는 key, 변수명
+        console.log(q,persons[q]); //person에 key 찾는데 유용함.
       }
+      // const lang = "JavaScript";
+      // for (const char of lang) {
+      //   console.log(char);
+      // } 문자열 하나하나 가져옴. 
 
-      let num = 23929292;
-      //   num.toString()
-      let numString = num.toString();
+      // let num = 23929292;
+      // //   num.toString() 문자열 변환
+      // let numString = num.toString();
 
-      for (const char of numString) {
-        console.log(char);
+      // for (const char of numString) {
+      //   console.log(char);
+      //}
+
+      Object.prototype.objCustom = function () {}; 
+      Array.prototype.arrCustom = function () {}; 
+      var iterable = [3, 5, 7]; 
+      iterable.foo = "hello";
+
+    //  for...in 루프는 객체의 모든 열거가능한 속성에 대해 반복합니다. index 번호를 가져오져옴.
+    //for...of 구문은 컬렉션 전용입니다. 모든 객체보다는, [Symbol.iterator] 속성이 있는 모든 컬렉션 요소에 대해 이 방식으로 반복합니다.
+    // 문자열을 가져옴
+       for (var key in iterable) 
+      { console.log(key); 
       }
+      // logs 0, 1, 2, "foo", "arrCustom", "objCustom"
+      for (var value of iterable) {
+         console.log(value); 
+      } // logs 3, 5, 7
+
     </script>
   </body>
 </html>
