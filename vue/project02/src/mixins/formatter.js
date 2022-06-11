@@ -91,16 +91,26 @@ export default {
 
       // amount = -3500 * 100 = 350000 / 100 = -3500.00
       // format = #,###.#0
+
       let v = String(Math.round(parseFloat(amount) * dec) / dec) // '-3500.00'
+      //parseFloat 개발자가 데이터를 넘길 때 숫자인지 글자인지 모르기 때문에 숫자로 바꺼줌
+      //Math.round() 함수는 입력값을 반올림한 수와 가장 가까운 정수 값을 반환합니다.
 
       if (v.startsWith('-')) {
         sign = '-'
         v = v.substring(1) // '3500.00'
       }
+      //startsWith() 메소드는 어떤 문자열이 특정 문자로 시작하는지 확인하여 결과를 true 혹은 false로 반환합니다.
+      //(-)음수값인지 확인하는 것
+      //substring(1) 1번 index부터 시작. index는 0번부터니깐 1번은 -값을 제외한 값을 가져옴.
 
       if (maxFractionDigits > 0 && format.slice(-1) === '0') {
         v = parseFloat(v).toFixed(maxFractionDigits)
       }
+      //maxFractionDigits 소수점 이하 표시 확인
+      //slice(-1) 3500.00 끝자리가 0인지 체크하는 것.끝자리 표기값을 정해주는 방법.
+      // parseFloat() 함수는 주어진 값을 필요한 경우 문자열로 변환한 후 부동소수점 실수로 파싱해 반환합니다.
+      // toFixed() 메서드는 숫자를 고정 소수점 표기법(fixed-point notation)으로 표시합니다.
 
       let d = '' // 소수점 이하 값만
       if (maxFractionDigits > 0 && v.indexOf('.') > -1) {
@@ -108,21 +118,27 @@ export default {
         d = d.replace('.', decimalSeparator) // .00 -> ,00
         v = v.substring(0, v.indexOf('.')) // 3500
       }
+      //v.indexOf('.') > -1 마지막 인덱스에 .이 있는가? 뒤에 소수점 확인하는 코드
+      //decimalSeparator 유럽식 표기법은 0.000,00이면 .,을 바꿔준다.
+      //substring은 첫번째 인덱스(0)부터 .인 소수점까지 값을 불러옴
 
       const regexp = /(\d+)(\d{3})/
-
       // v = 3524500
+      // /(\d+) 첫번째 자리 (\d{3})/ 나머지 세 자리
 
       while (regexp.test(v)) {
         // $1 = 3524, $2 = 500
         // v = 3524,500
 
+        //3524 이 숫자만 반복함.
         // $1 = 3, $2 = 524
         // v = 3,524,500
         v = v.replace(regexp, '$1' + groupingSeparator + '$2')
       }
-
+//test() 메소드는 정규식과 특정 문자열 사이의 일치에 대한 검색을 수행한다. true 또는 false 를 반환 합니다 .
+//  v = v.replace(regexp, '$1'(앞에 정규식에 매칭) + groupingSeparator + '$2'(뒤에 정규식에 매칭)) 정규식임.
       return sign + currencySymbol + String(v) + String(d) + lastSymbol
     }
+    //
   }
 }

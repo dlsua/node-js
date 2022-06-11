@@ -46,9 +46,10 @@ export default {
     },
     login() {
       this.$store.commit('user/setUser', {
-        name: 'Seungwon Go',
-        email: 'seungwon.go@gmail.com'
+        name: 'Lee Sangyong',
+        email: 'dlsuaqwe@gmail.com'
       })
+      //여기 데이터는 안 바뀌고 LoginView.vue에서 바뀜
     }
   }
 }

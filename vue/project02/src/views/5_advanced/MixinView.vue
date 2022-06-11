@@ -1,5 +1,6 @@
 <template>
   <div>A</div>
+  <div>mixins</div>
 </template>
 <script>
 import Formatter from '@/mixins/formatter.js'

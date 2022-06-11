@@ -1,19 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import store from '../store'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
+import ListToDataView from '../views/7_template/ListToDataView.vue'
 // import AboutView from '../views/AboutView.vue'
 // import HelloView from '../views/HelloView.vue'
 
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/home',
     name: 'home',
     component: HomeView
   },
   {
     path: '/login',
-    name: 'login',
+    name: 'login2',
     component: LoginView
+  },
+  {
+    path: '/listtodata',
+    name: 'listtodata',
+    component: ListToDataView
   },
   // {
   //   path: '/about',
@@ -258,12 +270,89 @@ const routes = [
       import(
         /* webpackChunkName: "vuex" */ '../views/6_vuex/test2View.vue'
         )
+  },
+  {
+    path: '/template/detail',
+    name: 'DetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "7_Teplate" */ '../views/7_template/DetailView.vue'
+        )
+  },
+  {
+    path: '/template/create',
+    name: 'CreatelView',
+    component: () =>
+      import(
+        /* webpackChunkName: "7_Teplate" */ '../views/7_template/CreatelView.vue'
+        )
+  },
+  {
+    path: '/template/change',
+    name: 'ChangelView',
+    component: () =>
+      import(
+        /* webpackChunkName: "7_Teplate" */ '../views/7_template/ChangeView.vue'
+        )
+  },
+  {
+    path: '/template/singleedit',
+    name: 'SingleEditView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template" */ '../views/7_template/SingleEditView.vue'
+      )
+  },
+  {
+    path: '/template/shttile',
+    name: 'ShuttleView',
+    component: () =>
+      import(
+        /* webpackChunkName: "7_Teplate" */ '../views/7_template/ShuttleView.vue'
+        )
+  },
+  {
+    path: '/template/multiple',
+    name: 'MultipleEidtView',
+    component: () =>
+      import(
+        /* webpackChunkName: "7_Teplate" */ '../views/7_template/MultipleEidtView.vue'
+        )
+  },
+  {
+    path: '/template/masterdetail',
+    name: 'MasterDetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template" */ '../views/7_template/MasterDetailView.vue'
+      )
+  },
+  {
+    path: '/template/shuttle',
+    name: 'ShuttleView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template" */ '../views/7_template/ShuttleView.vue'
+      )
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.path === '/') {
+    next()
+  } else {
+    if (store.getters['user/isLogin']) {
+      next()
+    } else {
+      store.commit('/user/logout')
+      next('/')
+    }
+  }
 })
 
 export default router
