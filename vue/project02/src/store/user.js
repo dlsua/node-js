@@ -25,7 +25,6 @@ export const user = {
   mutations: {
     // vue-cookies
     // vuex-persistedstate
-    //여기서만 변경가능한 데이터 설정
     setUser(state, userInfo) {
       state.userInfo = userInfo
       VueCookies.set('userInfo', userInfo, '8h')

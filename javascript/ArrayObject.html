@@ -22,13 +22,12 @@
       <tbody id="table1Tbody"></tbody>
     </table>
     <script>
-      // Array 객체 toString은 숫자타입을 문자타입으로 바꺼줌
+      // Array 객체
       let brands = ["애플", "구글", "메타", "아마존", "네이버", "카카오"];
       console.log(brands.toString());
 
-      //join() 하나의 문자로 바꺼줌.
-      console.log(brands.join(""));
-      console.log(brands.join(" 브랜드, "));
+      //join()
+      console.log(brands.join(" * "));
 
       function doSearch() {
         const productList = [
@@ -83,13 +82,11 @@
         document.getElementById("table1Tbody").innerHTML = h.join("");
       }
 
-      // pop() 마지막 요소를 제거하고 그 요소를 반환 받음
+      // pop()
       console.log(brands.pop());
-      //마지막 요소인 카카오를 반환 받음.
       console.log(brands.pop());
-      //마지막 요소인 카카오가 제외되고 다음 요소인 네이버를 반환 받음
 
-      //shift() pop과 반대로 첫번째요소를 제외하고 반환 받음
+      //shift()
       console.log(brands.shift());
       console.log(brands.shift());
 
@@ -97,7 +94,7 @@
 
       //   eventQueue.shift()
 
-      //  ()
+      // unshift()
       brands.unshift("삼성전자");
       console.log(brands);
 
